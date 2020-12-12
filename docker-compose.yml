@@ -1,0 +1,24 @@
+version: "2"
+services:
+  minidlna:
+    image: lordpedal/minidlna
+    container_name: miniDLNA
+    network_mode: host
+    environment:
+      - MINIDLNA_MEDIA_DIR_1=AVP,/media/Descargas
+      - MINIDLNA_MEDIA_DIR_2=A,/media/Musica
+      - MINIDLNA_MEDIA_DIR_3=V,/media/Videos
+      - MINIDLNA_MEDIA_DIR_4=P,/media/Imagenes
+      - MINIDLNA_FRIENDLY_NAME=Lordpedal DLNA
+      - MINIDLNA_INOTIFY=yes
+      - MINIDLNA_ROOT_CONTAINER=B
+      - MINIDLNA_MAX_CONNECTIONS=7
+      - MINIDLNA_SERIAL=15161881
+      - MINIDLNA_MODEL_NUMBER=1
+      - MINIDLNA_PORT=8200
+    volumes:
+      - '~/docker/minidlna/Descargas:/media/Descargas'
+      - '~/docker/minidlna/Musica:/media/Musica'
+      - '~/docker/minidlna/Videos:/media/Videos'
+      - '~/docker/minidlna/Imagenes:/media/Imagenes'
+    restart: always
