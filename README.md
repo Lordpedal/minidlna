@@ -1,8 +1,6 @@
 # docker MiniDLNA - [Tutorial](https://blog.lordpedal.duckdns.org/ "miniDLNA: Docker")
 
-## Uso
-
-Aquí presento algunos modos de ejecución para crear el container.
+Modos de ejecución para crear el container:
 
 ### docker-compose (*Opción recomendada*)
 
