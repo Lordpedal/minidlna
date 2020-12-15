@@ -1,0 +1,34 @@
+services: docker
+language: python
+python:
+  - "3.6"
+
+env:
+  matrix:
+    - ARCH=i386
+    - ARCH=amd64
+    - ARCH=arm
+    - ARCH=armv7
+    - ARCH=aarch64
+
+install:
+  - pip install -r requirements-test.txt
+
+before_script:
+  - ./build.sh $ARCH
+  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
+
+script:
+  - pytest -v test.py
+  - docker build -t lordpedal/minidlna:$ARCH --file Dockerfile.$ARCH .
+  - docker run -d --name=minidlna-$ARCH --health-cmd="curl --fail http://127.0.0.1:8200 || exit 1" --health-interval=5s --health-retries=3 lordpedal/minidlna:$ARCH
+  - sleep 15
+  - if [[ -z 'docker ps --filter="name=minidlna-$ARCH" --filter="health=healthy" -q' ]]; then exit 1; fi
+
+deploy:
+  provider: script
+  script:
+    echo "$DOCKER_PWD" | docker login -u "$DOCKER_USER" --password-stdin &&
+    docker push lordpedal/minidlna:$ARCH;
+  on:
+    branch: master
