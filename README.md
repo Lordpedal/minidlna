@@ -1,4 +1,4 @@
-# docker MiniDLNA - [Tutorial](https://blog.lordpedal.duckdns.org/minidlna-docker/ "miniDLNA: Docker")
+# docker MiniDLNA
 
 ## Modos de ejecución para crear el contenedor Docker
 
