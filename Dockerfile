@@ -31,7 +31,7 @@ ARG BUILD_DATE
 LABEL org.opencontainers.image.title="Lordpedal MiniDLNA" \
       org.opencontainers.image.url="$VCS_URL" \
       org.opencontainers.image.authors="Lordpedal" \
-      org.opencontainers.image.licenses="Apache-2.0" \
+      org.opencontainers.image.licenses="GNU-General-Public-License-v3.0" \
       org.opencontainers.image.version="$VERSION" \
       org.opencontainers.image.source="$VCS_URL" \
       org.opencontainers.image.revision="$VCS_REF" \
