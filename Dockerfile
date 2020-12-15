@@ -1,6 +1,6 @@
 # Alpine v3
 FROM alpine:3
-LABEL maintainer "Lordpedal - https://t.me/lordpedal_rss"
+LABEL maintainer="github.com/lordpedal"
 
 # Instalacion dependencias
 RUN apk --no-cache add bash curl minidlna tini
