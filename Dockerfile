@@ -20,19 +20,3 @@ ENTRYPOINT ["/sbin/tini", "--", "/lordpedal.sh"]
 # Check Docker
 HEALTHCHECK --interval=10s --timeout=10s --retries=6 CMD \
   curl --silent --fail localhost:8200 || exit 1
-
-# Metadata params
-ARG VERSION
-ARG VCS_URL
-ARG VCS_REF
-ARG BUILD_DATE
-
-# Metadata
-LABEL org.opencontainers.image.title="Lordpedal MiniDLNA" \
-      org.opencontainers.image.url="$VCS_URL" \
-      org.opencontainers.image.authors="Lordpedal" \
-      org.opencontainers.image.licenses="GNU-General-Public-License-v3.0" \
-      org.opencontainers.image.version="$VERSION" \
-      org.opencontainers.image.source="$VCS_URL" \
-      org.opencontainers.image.revision="$VCS_REF" \
-      org.opencontainers.image.created="$BUILD_DATE"
