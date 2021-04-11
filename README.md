@@ -69,7 +69,6 @@ Estos parámetros están separados por dos puntos e indican ``<external>: <inter
 | -v ``<Ruta_Origen_Musica>:/media/Musica`` | Definimos ruta donde alojamos la musica a compartir por Red |
 | -v ``<Ruta_Origen_Videos>:/media/Videos`` | Definimos ruta donde alojamos los videos a compartir por Red |
 | -v ``<Ruta_Origen_Imagenes>:/media/Imagenes`` | Definimos ruta donde alojamos las imagenes a compartir por Red |
-| -v ``... : ...`` | Respetando la estructura podriamos seguir añadiendo contenidos |
 | ``--net=host`` | Habilitamos el uso de la red ``host`` en vez de una virtual para docker |
 
 ## Variables entorno
